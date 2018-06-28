@@ -1,0 +1,35 @@
+{ powex.txt -- Algorithm #19: Power function by Tom Swan }
+
+function Power(Base, Exponent: double): double;
+  function Pow(B, E: double): double;
+  begin
+    Pow := exp(E * ln(B))
+  end;
+begin
+  if (Base > 0.0) then
+    Power := Pow(Base, Exponent)
+  else if (Base < 0.0) then
+  begin
+    if frac(Exponent) = 0.0 then
+      if odd(trunc(Exponent)) then
+        Power := -Pow(-Base, Exponent)
+      else
+        Power := Pow(-Base, Exponent)
+    else
+      Throw Error(Base, Exponent)
+  end else
+  begin
+    if Exponent = 0.0 then
+      Power := 1.0
+    else if Exponent < 1.0 then
+      Throw Error(Base, Exponent)
+    else
+      Power := 0.0
+  end
+end;
+
+(*
+// --------------------------------------------------------------
+// Copyright (c) 1994 by Tom Swan. All rights reserved
+// Revision 1.00    Date: 02/07/1994   Time: 09:30 am
+*)

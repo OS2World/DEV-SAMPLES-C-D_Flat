@@ -1,0 +1,71 @@
+#
+# DFlat++ V3 for OS/2 - Makefile for Borland C++ for OS/2
+#
+
+.AUTODEPEND
+.SUFFIXES:
+.SUFFIXES: .rc .res .obj .c .asm .hlp .itl .ipf
+
+COMPILER= e:\bcos2
+TOOLS   = $(COMPILER)\BIN
+INCLUDE = $(COMPILER)\INCLUDE
+LIB     = $(COMPILER)\LIB
+STARTUP = $(LIB)\c02.obj
+CC      = $(TOOLS)\bcc -c -v -w
+LFLAGS  = -c -x -v -ap
+LINK    = $(TOOLS)\tlink $(LFLAGS) -L$(LIB) $(STARTUP)
+LIBS    = c2 + os2
+
+.cpp.obj:
+    $(CC) $(CFLAGS) -I$(INCLUDE) {$< }
+
+all : ted.exe
+    echo done
+
+ted.exe : ted.obj tedmenu.obj tedtools.obj dflatpp.lib commdlg.lib
+    $(LINK) ted tedmenu tedtools,ted,ted,dflatpp commdlg $(LIBS)
+
+commdlg.lib : fileopen.obj   \
+              directry.obj   \
+              notice.obj
+    $(TOOLS)\tlib commdlg @commdlg.bld
+
+dflatpp.lib : desktop.obj    \
+            keyboard.obj     \
+            mouse.obj        \
+            cursor.obj       \
+            speaker.obj      \
+            screen.obj       \
+            clock.obj        \
+            dtimer.obj       \
+            dfwindow.obj     \
+            applicat.obj     \
+            control.obj      \
+            textbox.obj      \
+            rectangl.obj     \
+            listbox.obj      \
+            popdown.obj      \
+            menusel.obj      \
+            menubar.obj      \
+            frame.obj        \
+            scrolbar.obj     \
+            strings.obj      \
+            border.obj       \
+            focus.obj        \
+            paint.obj        \
+            statbar.obj      \
+            ctlmenu.obj      \
+            editbox.obj      \
+            editor.obj       \
+            button.obj       \
+            toolbar.obj      \
+            toolbutt.obj     \
+            pbutton.obj      \
+            checkbox.obj     \
+            radio.obj        \
+            dialog.obj       \
+            label.obj
+    $(TOOLS)\tlib dflatpp @dflatpp.bld /P32
+
+
+

@@ -1,0 +1,143 @@
+D-Flat++ Version 3
+September, 1993
+
+The makefile is for Borland C++ 3.1 only. Other compilers are not
+supported because templates are required. The makefile makes a program
+called TEST.EXE, which demonstrates most of the features.
+
+--------------------------------------------------------------
+Version 2
+
+1. Dialog Box support added
+
+2. Special PushButton-derived controls:
+    YesButton
+    NoButton
+    OKButton
+    ESCButton
+    HelpButton
+
+3. Common dialog boxes:
+    FileOpen
+    SaveAs
+    YesNoBox
+    NoticeBox
+    ErrorMessageBox
+    
+4. Multiline Editboxes not implemented yet
+
+----------------------------------------------------------------
+Version 3
+
+1. Fixed problems with frame on moving and sizing
+
+2. Desktop now saves current drive and subdirectory upon open and
+   restores it upon close.
+
+3. Added ToolBar and ToolButton classes
+
+4. Still working on multiline editboxes. They are implemented but
+with some small quirks. For example, inserting a carriage return (the
+Enter key) or word-wrapping on a line when embedded tabs follow
+does not yet adjust the following lines' tab positions. 
+
+5. Added TED, a sample text editor. Still preliminary.
+
+6. You now put a menubar in the application by embedding it in the
+   derived application class.
+----------------------------------------------------------------
+Schedule of D-Flat++ Source Code Discussions in DDJ C Programming Column
+
+               '92     '93                       '94
+               Nov Dec Jan Feb Mar Apr * Nov Dec Jan Feb
+                                       ^ (No DF++ discussion May-Oct '93)
+APPLICAT.CPP                x          |
+APPLICAT.H                  x          |
+BORDER.CPP                             |
+BUTTON.CPP                  x          | 
+BUTTON.H                    x          |
+CHECKBOX.CPP                    x      |
+CHECKBOX.H                      x      |
+CLOCK.CPP           x                  |
+CLOCK.H         x                      |
+CONTROL.CPP                 x          |
+CONTROL.H                   x          |
+CTLMENU.CPP                         x  |
+CURSOR.CPP          x                  |
+CURSOR.H        x                      |
+DESKTOP.CPP         x                  |
+DESKTOP.H       x                      |
+DFLATDEF.H              x              |
+DFLATPP.H                              |
+DFWINDOW.CPP            x              |
+               '92     '93                       '94
+               Nov Dec Jan Feb Mar Apr * Nov Dec Jan Feb
+DFWINDOW.H              x              |
+DIALOG.CPP                             |  x
+DIALOG.H                               |  x
+DIRECTRY.CPP                           |  x
+DIRECTRY.H                             |  x
+EDITBOX.CPP                            | 
+EDITBOX.H                              |
+EDITOR.CPP                             |
+EDITOR.H                               |
+FAMILY.H                               |
+FILEOPEN.CPP                           |  x
+FILEOPEN.H                             |  x
+FOCUS.CPP                              |
+FRAME.CPP                              |
+FRAME.H                                |
+KEYBOARD.CPP        x                  |
+KEYBOARD.H      x                      |
+LABEL.CPP                              |
+LABEL.H                                |
+LISTBOX.CPP                     x      |
+               '92     '93                       '94
+               Nov Dec Jan Feb Mar Apr * Nov Dec Jan Feb
+LISTBOX.H                       x      |
+MEDITBOX.CPP                           |
+MEDITBOX.H                             |
+MENUBAR.CPP                         x  |
+MENUBAR.H                           x  |
+MENUSEL.CPP                         x  |
+MENUSEL.H                           x  |
+MOUSE.CPP           x                  |
+MOUSE.H         x                      |
+NOTICE.CPP                             |
+NOTICE.H                               |
+PAINT.CPP                              |
+PBUTTON.CPP                     x      |
+PBUTTON.H                       x      |
+POPDOWN.CPP                         x  |
+POPDOWN.H                           x  |
+RADIO.CPP                       x      |
+RADIO.H                         x      |
+RECTANGL.CPP                           |
+RECTANGL.H                             |
+SCREEN.CPP          x                  |
+SCREEN.H        x                      |
+SCROLBAR.CPP                           |
+SCROLBAR.H                             |
+SOUND.CPP                              |
+SOUND.H                                |
+SPEAKER.CPP         x                  |
+SPEAKER.H       x                      |
+STATBAR.CPP                            |
+STATBAR.H                              |
+STRINGS.CPP                            |
+STRINGS.H                              |
+TED.CPP                                |      x
+TED.H                                  |      x
+TEDMENU.CPP                            |      x
+TEDTOOLS.CPP                           |      x
+TEDTOOLS.H                             |      x
+TEST.CPP                            x  |
+TEXTBOX.CPP                 x          |
+TEXTBOX.H                   x          |
+TIMER.CPP                              |
+TIMER.H                                |
+               '92     '93                       '94
+               Nov Dec Jan Feb Mar Apr * Nov Dec Jan Feb
+TOOLBAR.H                              |      x
+TOOLBAR.CPP                            |      x
+TOOLBUTT.CPP                           |      x
